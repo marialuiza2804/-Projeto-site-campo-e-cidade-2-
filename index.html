@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrando a Conexão Campo e Cidade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🌾 Celebrando a Conexão Campo e Cidade 🏙️</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#atividades">Atividades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="campo">
+            <h2>Do campo...</h2>
+            <p>Tradições, agricultura e saberes locais.</p>
+        </div>
+        <div class="cidade">
+            <h2>...à cidade</h2>
+            <p>Inovação, cultura urbana e novas conexões.</p>
+        </div>
+    </section>
+
+    <section id="sobre" class="info">
+        <h2>Sobre o Projeto</h2>
+        <p>Este projeto celebra a união entre o campo e a cidade, valorizando os saberes rurais e promovendo trocas com os ambientes urbanos.</p>
+    </section>
+
+    <section id="atividades" class="cards">
+        <div class="card">
+            <h3>Feiras Locais</h3>
+            <p>Produtos do campo chegando à cidade.</p>
+        </div>
+        <div class="card">
+            <h3>Oficinas Culturais</h3>
+            <p>Trocas de saberes entre gerações.</p>
+        </div>
+        <div class="card">
+            <h3>Eventos Sustentáveis</h3>
+            <p>Consumo consciente e agroecologia.</p>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Fale Conosco</h2>
+        <form>
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section id="mapa" class="info">
+        <h2>📍 Mapa dos Eventos</h2>
+        <div id="map"></div>
+    </section>
+
+    <section id="galeria" class="info">
+        <h2>🖼️ Galeria Campo & Cidade</h2>
+        <div class="galeria">
+            <img src="https://images.unsplash.com/photo-1614200482240-1c9f4f9020c3" alt="Feira rural">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7" alt="Conexão urbana">
+            <img src="https://images.unsplash.com/photo-1505576391880-43879aa73ca1" alt="Natureza e tecnologia">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Celebrando Campo e Cidade. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const map = L.map('map').setView([-23.55052, -46.63331], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([-23.55, -46.63]).addTo(map)
+            .bindPopup('Feira de Produtos Rurais<br>São Paulo - SP')
+            .openPopup();
+    </script>
+</body>
+</html>
